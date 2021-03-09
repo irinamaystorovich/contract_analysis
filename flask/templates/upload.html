@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>insight</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo Black">
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+  </head>
+  <style>
+h1{text-align: center}
+h2{text-align: center}
+body{background-image: url("{{ url_for('static', filename='background.jpg') }}");}
+</style>
+  <body>
+    <br>
+    <br>
+    <h1 style="font-size:400%;
+    text-shadow: 4px 4px 4px #aaa;font-family: 'Archivo Black'; color:#404040">INSIGHT</h1>
+    <br>
+    <br>
+    {% if msg %}
+    <h1>{{ msg }}</h1>
+    {% endif %}
+    <form method=post enctype=multipart/form-data>
+      <p style="text-align:center; ">
+      <br>
+        <input type=file name=file>
+        <input type=submit value=upload>
+    </form>
+    <br>
+    <br>
+<!--    {% if img_src %}-->
+<!--      <img src="{{ img_src }}">-->
+<!--    {% endif %}-->
+    {% if extracted_text %}
+      <p style="text-align:center">
+        <br>
+        <br>
+<!--        The extracted text from the image above is:-->
+        <b> {{ extracted_text }} </b></p>
+    {% else %}
+<!--      The extracted text will be displayed here-->
+
+    {% endif %}
+  </body>
+</html>
