@@ -22,14 +22,14 @@ def ocr_core(filename):
     text_pii = list(lexnlp.extract.en.pii.get_pii(text))
 
     sentence_list = lexnlp.nlp.en.segments.sentences.get_sentence_list(text)
-    constraints_and_conditions_dict = []
+    constraints_and_conditions_dict = {}
     for sentence in sentence_list:
         constraints_list = list(lexnlp.extract.en.constraints.get_constraints(sentence))
         conditions_list = list(lexnlp.extract.en.conditions.get_conditions(sentence))
 
         constraints_list.extend(conditions_list)
         if len(constraints_list)>0:
-            constraints_and_conditions_dict = []
+            constraints_and_conditions_dict[sentence] = constraints_list
 
     return "Dates: " + str(text_dates) + "Names: " + str(text_names) + "PII: " + str(text_pii) + "Actionable Items: " + str(constraints_and_conditions_dict)
 
