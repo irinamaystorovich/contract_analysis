@@ -21,6 +21,7 @@ num2words==0.5.10
 numpy==1.19.1
 olefile==0.46
 pandas==0.24.2
+pdfminer==20191125
 Pillow @ file:///C:/ci/pillow_1615224175364/work
 pycountry==20.7.3
 PyPDF2==1.26.0
