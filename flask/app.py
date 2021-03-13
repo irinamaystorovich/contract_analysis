@@ -1,7 +1,10 @@
 import os
 from flask import Flask, render_template, request
+#from ocr import ocr_core
 from ocr import ocr_core
-import PyPDF2
+from pdf import *
+from ocr1 import ocr_core1
+
 
 UPLOAD_FOLDER = '/static/uploads/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -30,17 +33,22 @@ def upload_page():
 
         if file and allowed_file(file.filename):
             file.save(os.path.join(os.getcwd() + UPLOAD_FOLDER, file.filename))
-
+            #path = 'month-to-month-residential-rental-lease-agreement.pdf'
+            # file='test_2.png'
             # call the OCR function on it
-            extracted_text = ocr_core(file)
-            
+            extracted_text, extracted_text2, extracted_text3, extracted_text4 = ocr_core(file)
             # extract the text and display it
             return render_template('upload.html',
                                    msg='successfully processed',
                                    extracted_text=extracted_text,
+                                   extracted_text2=extracted_text2,
+                                   extracted_text3=extracted_text3,
+                                   extracted_text4=extracted_text4,
                                    img_src=UPLOAD_FOLDER + file.filename)
     elif request.method == 'GET':
         return render_template('upload.html')
+
+
 
 if __name__ == '__main__':
     app.run()
