@@ -7,7 +7,7 @@ Note: 1) Docker container built successfully, 2) Docker container ran successful
 ## Running the app on Docker:
 
 
-### 1. Install Docker. [https://docs.docker.com/get-docker/]
+### 1. Install Docker and Run Docker Desktop. [https://docs.docker.com/get-docker/] 
 
 
 ### 2. Build Docker Container. 
