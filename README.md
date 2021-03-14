@@ -15,6 +15,8 @@ Note: 1) Docker container built successfully, 2) Docker container ran successful
    * Download the directory and files.
    * Navigate to the correct directory using CLI (should contain **dockerfile** within).
    * Enter `docker build -f Dockerfile -t contract_app .`
+
+   * (Error: "In the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect." refer to [https://stackoverflow.com/questions/40459280/docker-cannot-start-on-windows])
    
    
 ### 3. Run Docker Container.
