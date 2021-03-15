@@ -35,7 +35,7 @@ scikit-learn==0.23.1
 scipy==1.5.1
 six==1.15.0
 smart-open==4.2.0
-TBB==0.1
+#TBB==0.1
 threadpoolctl==2.1.0
 tqdm==4.59.0
 tzlocal==2.1
