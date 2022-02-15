@@ -10,8 +10,6 @@
 -------------------------------------------------------------------------------------------
 # Docker Test
 
-Note: 1) Docker container built successfully, 2) Docker container ran successfully, 3) could not figure out correct porting (will probably need help with this part). 
-
 ## Running the app on Docker:
 
 
